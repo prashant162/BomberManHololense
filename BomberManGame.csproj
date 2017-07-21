@@ -76,7 +76,84 @@
       <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="Assets\black-handbomb.blend" />
+    <None Include="Assets\FireExplosionVFX\Art\Animation\Ani_FadeOff.anim" />
+    <None Include="Assets\FireExplosionVFX\Art\Animation\Ctrl_Fade.controller" />
+    <None Include="Assets\FireExplosionVFX\Art\Fnt_GothicFont.ttf" />
+    <None Include="Assets\FireExplosionVFX\Art\Materials\Mat_Bottle.mat" />
+    <None Include="Assets\FireExplosionVFX\Art\Materials\Mat_Explosion.mat" />
+    <None Include="Assets\FireExplosionVFX\Art\Materials\Mat_Fire.mat" />
+    <None Include="Assets\FireExplosionVFX\Art\Materials\Mat_Flame.mat" />
+    <None Include="Assets\FireExplosionVFX\Art\Materials\Mat_Floor.mat" />
+    <None Include="Assets\FireExplosionVFX\Art\Materials\Mat_Glow.mat" />
+    <None Include="Assets\FireExplosionVFX\Art\Materials\Mat_Trail.mat" />
+    <None Include="Assets\FireExplosionVFX\Art\Meshes\msh_Bottle.FBX" />
+    <None Include="Assets\FireExplosionVFX\Art\Textures\Tex_Fire.tga" />
+    <None Include="Assets\FireExplosionVFX\Art\Textures\Tex_Glow.tga" />
+    <None Include="Assets\FireExplosionVFX\Art\Textures\Tex_Smoke.tga" />
+    <None Include="Assets\FireExplosionVFX\Art\Textures\Thumbs.db" />
+    <None Include="Assets\FireExplosionVFX\Prefabs\Fx_OilSplashHIGH_Root.prefab" />
+    <None Include="Assets\FireExplosionVFX\Prefabs\Fx_OilSplashLOW_Root.prefab" />
+    <None Include="Assets\FireExplosionVFX\Prefabs\Fx_OilTrailHIGH_Root.prefab" />
+    <None Include="Assets\FireExplosionVFX\Prefabs\Fx_OilTrailLOW_Root.prefab" />
+    <None Include="Assets\FireExplosionVFX\Prefabs\OilBottle_High.prefab" />
+    <None Include="Assets\FireExplosionVFX\Prefabs\OilBottle_Low.prefab" />
+    <None Include="Assets\FireExplosionVFX\Scenes\FxScene.unity" />
+    <None Include="Assets\GroundExplosion\BlackSmoke.mat" />
+    <None Include="Assets\GroundExplosion\ExplosionSmoke.mat" />
+    <None Include="Assets\GroundExplosion\GroundCrack.mat" />
+    <None Include="Assets\GroundExplosion\GroundSmoke.mat" />
+    <None Include="Assets\Materials\Material.mat" />
+    <None Include="Assets\Materials\Material_001.mat" />
+    <None Include="Assets\Materials\unnamed.mat" />
+    <None Include="Assets\Prefab\Explosions\explosion_asteroid.prefab" />
+    <None Include="Assets\Prefab\Explosions\explosion_enemy.prefab" />
+    <None Include="Assets\Prefab\Explosions\explosion_player.prefab" />
+    <None Include="Assets\_scene\BomberMan.unity" />
+    <None Include="ProjectSettings\AudioManager.asset" />
+    <None Include="ProjectSettings\ClusterInputManager.asset" />
+    <None Include="ProjectSettings\DynamicsManager.asset" />
+    <None Include="ProjectSettings\EditorBuildSettings.asset" />
+    <None Include="ProjectSettings\EditorSettings.asset" />
+    <None Include="ProjectSettings\GraphicsSettings.asset" />
+    <None Include="ProjectSettings\InputManager.asset" />
+    <None Include="ProjectSettings\NavMeshAreas.asset" />
+    <None Include="ProjectSettings\NetworkManager.asset" />
+    <None Include="ProjectSettings\Physics2DSettings.asset" />
+    <None Include="ProjectSettings\ProjectSettings.asset" />
+    <None Include="ProjectSettings\QualitySettings.asset" />
+    <None Include="ProjectSettings\TagManager.asset" />
+    <None Include="ProjectSettings\TimeManager.asset" />
+    <None Include="ProjectSettings\UnityAdsSettings.asset" />
+    <None Include="ProjectSettings\UnityConnectSettings.asset" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Audio\explosion_asteroid.wav" />
+    <Content Include="Assets\Audio\explosion_enemy.wav" />
+    <Content Include="Assets\Audio\explosion_player.wav" />
+    <Content Include="Assets\Audio\music_background.wav" />
+    <Content Include="Assets\Audio\weapon_enemy.wav" />
+    <Content Include="Assets\Audio\weapon_player.wav" />
+    <Content Include="Assets\FireExplosionVFX\Art\Textures\Img_Bottle_Diffuse.png" />
+    <Content Include="Assets\FireExplosionVFX\Art\Textures\Img_Floor_Diffuse.jpg" />
+    <Content Include="Assets\FireExplosionVFX\Art\Textures\Sp_Btn_Bck.png" />
+    <Content Include="Assets\FireExplosionVFX\Art\Textures\Tex_Flame.jpg" />
+    <Content Include="Assets\FireExplosionVFX\Art\Textures\Tex_Splash.png" />
+    <Content Include="Assets\GroundExplosion\GroundCrack.png" />
+    <Content Include="Assets\GroundExplosion\GroundCrack_old.png" />
+    <Content Include="Assets\GroundExplosion\GroundSmoke.png" />
+    <Content Include="Assets\GroundExplosion\GroundSmoke_old.png" />
+    <Content Include="Assets\GroundExplosion\IMG_21072017_123316_0.png" />
+    <Content Include="BomberManHololense.csproj" />
+    <Content Include="BomberManHololense.sln" />
+    <Content Include="ProjectSettings\ProjectVersion.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\FireExplosionVFX\Scripts\FxSplash.cs" />
+    <Compile Include="Assets\FireExplosionVFX\Scripts\LaunchEffect.cs" />
     <Compile Include="Assets\Scripts\Blast.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
