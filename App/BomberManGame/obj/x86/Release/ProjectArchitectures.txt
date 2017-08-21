@@ -1,0 +1,4 @@
+D:\BM\App\BomberManGame\BomberManGame.csproj;x86
+D:\BM\UWP\Assembly-CSharp\Assembly-CSharp.csproj;x86
+D:\BM\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj;x86
+D:\BM\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj;x86
