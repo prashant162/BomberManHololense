@@ -17,6 +17,7 @@ public class GazeGestureManager : MonoBehaviour
 
     private GameObject planeObject = null;
     Vector3 oldHeadPosition = new Vector3(-1, -1, -1);
+    Vector3 blastPoint = new Vector3(0, 0, 0);
 
     // Use this for initialization
     void Awake()
@@ -29,9 +30,16 @@ public class GazeGestureManager : MonoBehaviour
         recognizer = new GestureRecognizer();
         recognizer.TappedEvent += (source, tapCount, ray) =>
         {
-            this.BroadcastMessage("OnSelect");
-            Invoke("BlastBomb", explodeAfterSeconds);
-            Debug.Log("In air tap method");
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                //transform.position = hit.point;
+                this.BroadcastMessage("OnSelect", hit.point);
+                blastPoint = hit.point;
+                Invoke("BlastBomb", explodeAfterSeconds);
+                Debug.Log("In air tap method");
+            }
+            
            
         };
         recognizer.StartCapturingGestures();
@@ -40,7 +48,7 @@ public class GazeGestureManager : MonoBehaviour
     private void BlastBomb()
     {
         Debug.Log("In BlastBomb Method");
-        Object gameObj = Instantiate(explodeObject, explodeObject.transform.position, explodeObject.transform.rotation);
+        Object gameObj = Instantiate(explodeObject, blastPoint, explodeObject.transform.rotation);
         Destroy(gameObj, flameVisibilityInSeconds);
         Debug.Log(gameObj.name);
     }
@@ -59,12 +67,12 @@ public class GazeGestureManager : MonoBehaviour
         var headPosition = Camera.main.transform.position;
         var gazeDirection = Camera.main.transform.forward;
         
-        if (Vector3.Distance(oldHeadPosition, headPosition) > 0)
-        {
+        //if (Vector3.Distance(oldHeadPosition, headPosition) > 0)
+        //{
             oldHeadPosition = headPosition;
             planeObject.transform.position = headPosition + gazeDirection * 25;
             //Debug.Log("head position: " + headPosition);
-        }
+        //}
         
         
         RaycastHit hitInfo;
