@@ -15,10 +15,15 @@ public class GazeGestureManager : MonoBehaviour
     public float explodeAfterSeconds = 3f;
     public float flameVisibilityInSeconds = 3f;
 
+    private GameObject planeObject = null;
+    Vector3 oldHeadPosition = new Vector3(-1, -1, -1);
+
     // Use this for initialization
     void Awake()
     {
         Instance = this;
+
+        planeObject = GameObject.FindGameObjectWithTag("plane");
 
         // Set up a GestureRecognizer to detect Select gestures.
         recognizer = new GestureRecognizer();
@@ -43,6 +48,9 @@ public class GazeGestureManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
+
         // Figure out which hologram is focused this frame.
         GameObject oldFocusObject = FocusedObject;
 
@@ -50,7 +58,15 @@ public class GazeGestureManager : MonoBehaviour
         // head position and orientation.
         var headPosition = Camera.main.transform.position;
         var gazeDirection = Camera.main.transform.forward;
-
+        
+        if (Vector3.Distance(oldHeadPosition, headPosition) > 0)
+        {
+            oldHeadPosition = headPosition;
+            planeObject.transform.position = headPosition + gazeDirection * 25;
+            //Debug.Log("head position: " + headPosition);
+        }
+        
+        
         RaycastHit hitInfo;
         if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
         {

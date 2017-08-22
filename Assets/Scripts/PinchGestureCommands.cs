@@ -14,8 +14,9 @@ public class PinchGestureCommands : MonoBehaviour
         if (bombItem != null)
         {
             Debug.Log("Instantiation Started");
-            Object gameObj = Instantiate(bombItem, Camera.current.transform.position + bombCreateDistance, bombItem.transform.rotation);
-            Debug.Log("Camera position: " + Camera.current.transform.position +" object position: "+Camera.current.transform.position + bombCreateDistance);
+
+            Object gameObj = Instantiate(bombItem, Camera.current.transform.forward + bombCreateDistance, bombItem.transform.rotation);
+            Debug.Log(Camera.current.transform.position + Camera.current.transform.forward);
             Destroy(gameObj, time);
             //WaitAndDestroy(time, bombItem, fireObject);
             Debug.Log("Instantiation Ended");
